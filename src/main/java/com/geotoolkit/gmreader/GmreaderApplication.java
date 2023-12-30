@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class GmreaderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GmreaderApplication.class, args);
+		SpringApplication.run(GmreaderApplicatio.class, args);
 	}
 
 }
