@@ -21,14 +21,14 @@ public class FileUploadController {
   @PostMapping("/single-file-upload")
   public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
 
-    Map<String, String> map = new HashMap<>();
+    Map<String, String> model = new HashMap<>();
 
-    map.put("fileName", file.getOriginalFilename());
-    map.put("fileSize", String.valueOf(file.getSize()));
-    map.put("fileContentType", file.getContentType());
+    model.put("fileName", file.getOriginalFilename());
+    model.put("fileSize", String.valueOf(file.getSize()));
+    model.put("fileContentType", file.getContentType());
 
-    map.put("message", "File upload done");
-    return ResponseEntity.ok(map);
+    model.put("message", "File upload done");
+    return ResponseEntity.ok(model);
   }
 
 }
