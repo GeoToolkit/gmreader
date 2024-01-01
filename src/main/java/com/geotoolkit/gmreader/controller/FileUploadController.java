@@ -12,21 +12,24 @@ import java.util.Map;
 @Controller
 public class FileUploadController {
 
-    @PostMapping("/single-file-upload")
-    public ResponseEntity<Map<String, String>> handleFileUploadUsingCurl(
-            @RequestParam("file") MultipartFile file) {
+    /**
+     * Reads gravity model file.
+     *
+     * @param file with harmonic coefficients.
+     * @return information about file.
+     */
+  @PostMapping("/single-file-upload")
+  public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
 
-        Map<String, String> map = new HashMap<>();
+    Map<String, String> map = new HashMap<>();
 
-        // Populate the map with file details
-        map.put("fileName", file.getOriginalFilename());
-        map.put("fileSize", String.valueOf(file.getSize()));
-        map.put("fileContentType", file.getContentType());
+    map.put("fileName", file.getOriginalFilename());
+    map.put("fileSize", String.valueOf(file.getSize()));
+    map.put("fileContentType", file.getContentType());
 
-        // File upload is successful
-        map.put("message", "File upload done");
-        return ResponseEntity.ok(map);
-    }
+    map.put("message", "File upload done");
+    return ResponseEntity.ok(map);
+  }
 
 }
 
