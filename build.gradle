@@ -54,8 +54,8 @@ checkstyle {
 
 publishing {
 	publications{
-		maven(MavenPublication){
-			from components.java
+		maven(MavenPublication) {
+			artifact bootJar
 		}
 	}
 	repositories {
