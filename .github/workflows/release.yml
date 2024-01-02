@@ -32,7 +32,7 @@ jobs:
         name: Build and push Docker image
         with:
           image: ghcr.io/geotoolkit/gmreader
-          tags: v0.1.6
+          tags: v0.1.7
           registry: ghcr.io
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
