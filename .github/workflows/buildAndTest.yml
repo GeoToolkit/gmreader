@@ -29,11 +29,3 @@ jobs:
           arguments: publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: mr-smithers-excellent/docker-build-push@v6
-        name: Build and push Docker image
-        with:
-          image: ghcr.io/geotoolkit/gmreader
-          tags: v1
-          registry: ghcr.io
-          username: ${{ secrets.GHCR_USERNAME }}
-          password: ${{ secrets.GHCR_TOKEN }}
